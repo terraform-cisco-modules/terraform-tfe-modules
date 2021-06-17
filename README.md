@@ -14,6 +14,8 @@ tfc_variables will assign variables to workspaced created with the tfc_workspace
 
 Please refer to the README.md in each module for further details.
 
+IMPORTANT NOTE: The resource tfe_variables stores data in plain text even when attributes are marked as sensitive.  Be very cautious not to allow state files to be synched to a public repository.
+
 ## Usage
 
 * Please refer to the example folder for a working example.
