@@ -1,6 +1,6 @@
 # Terraform Cloud - Workspace Modules
 
-## This Repository consists of three modules
+## This Repository consists of three sub-modules
 
 * tfc_agent_pool
 * tfc_workspaces
@@ -19,3 +19,7 @@ IMPORTANT NOTE: The resource tfe_variables stores data in plain text even when a
 ## Usage
 
 * Please refer to the example folder for a working example.
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
