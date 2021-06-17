@@ -4,7 +4,7 @@
 #__________________________________________________________
 
 module "tfc_agent_pool" {
-  source       = "terraform-cisco-modules/modules/tfe//modules/tfc_agent_pools"
+  source       = "terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool"
   agent_pool   = var.agent_pool
   tfc_org_name = var.tfc_org_name
 }
