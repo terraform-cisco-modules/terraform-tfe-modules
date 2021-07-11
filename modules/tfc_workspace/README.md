@@ -38,14 +38,30 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_agent_pool"></a> [agent\_pool](#input\_agent\_pool) | The ID of an agent pool to assign to the workspace. Requires execution\_mode to be set to agent. This value must not be provided if execution\_mode is set to any other value or if operations is provided. | `string` | `""` | no |
+| <a name="input_allow_destroy_plan"></a> [allow\_destroy\_plan](#input\_allow\_destroy\_plan) | Whether destroy plans can be queued on the workspace. | `bool` | `true` | no |
+| <a name="input_auto_apply"></a> [auto\_apply](#input\_auto\_apply) | Automatically apply changes when a Terraform plan is successful. Plans that have no changes will not be applied. If this workspace is linked to version control, a push to the default branch of the linked repository will trigger a plan and apply. | `bool` | `false` | no |
+| <a name="input_branch"></a> [branch](#input\_branch) | The repository branch that Terraform will execute from. Default to master. | `string` | `"master"` | no |
+| <a name="input_description"></a> [description](#input\_description) | A description for the workspace. | `string` | `""` | no |
+| <a name="input_execution_mode"></a> [execution\_mode](#input\_execution\_mode) | Which execution mode to use. Using Terraform Cloud, valid values are remote, local or agent. Using Terraform Enterprise, only remote and local execution modes are valid. When set to local, the workspace will be used for state storage only. Defaults to remote. This value must not be provided if operations is provided. | `string` | `"remote"` | no |
+| <a name="input_file_triggers_enabled"></a> [file\_triggers\_enabled](#input\_file\_triggers\_enabled) | Whether to filter runs based on the changed files in a VCS push. If enabled, the working directory and trigger prefixes describe a set of paths which must contain changes for a VCS push to trigger a run. If disabled, any push will trigger a run. Defaults to true. | `bool` | `true` | no |
+| <a name="input_global_remote_state"></a> [global\_remote\_state](#input\_global\_remote\_state) | Whether the workspace allows all workspaces in the organization to access its state data during runs. If false, then only specifically approved workspaces can access its state (remote\_state\_consumer\_ids). | `bool` | `false` | no |
+| <a name="input_ingress_submodules"></a> [ingress\_submodules](#input\_ingress\_submodules) | Whether submodules should be fetched when cloning the VCS repository. Defaults to false. | `bool` | `false` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name for the workspace. | `string` | n/a | yes |
+| <a name="input_queue_all_runs"></a> [queue\_all\_runs](#input\_queue\_all\_runs) | n/a | `bool` | `false` | no |
+| <a name="input_remote_state_consumer_ids"></a> [remote\_state\_consumer\_ids](#input\_remote\_state\_consumer\_ids) | The set of workspace IDs set as explicit remote state consumers for the given workspace. | `list(string)` | `[]` | no |
+| <a name="input_speculative_enabled"></a> [speculative\_enabled](#input\_speculative\_enabled) | Whether this workspace allows speculative plans. Setting this to false prevents Terraform Cloud or the Terraform Enterprise instance from running plans on pull requests, which can improve security if the VCS repository is public or includes untrusted contributors. Defaults to true. | `bool` | `true` | no |
+| <a name="input_ssh_key_id"></a> [ssh\_key\_id](#input\_ssh\_key\_id) | The ID of an SSH key to assign to the workspace. | `string` | `""` | no |
+| <a name="input_terraform_version"></a> [terraform\_version](#input\_terraform\_version) | The version of Terraform to use for this workspace. Defaults to the latest available version. | `string` | `"1.0.0"` | no |
 | <a name="input_tfc_oath_token"></a> [tfc\_oath\_token](#input\_tfc\_oath\_token) | Terraform Cloud OAuth Token for VCS\_Repo Integration. | `string` | n/a | yes |
 | <a name="input_tfc_org_name"></a> [tfc\_org\_name](#input\_tfc\_org\_name) | Terraform Cloud Organization Name. | `string` | n/a | yes |
-| <a name="input_workspace_list"></a> [workspace\_list](#input\_workspace\_list) | Workspaces (containing agent\_pool, description, exec\_mode, name, vcs\_repo, working\_dir). | <pre>map(object({<br>    auto_apply                = optional(bool)<br>    agent_pool                = optional(string)<br>    description               = optional(string)<br>    execution_mode            = optional(string)<br>    global_remote_state       = optional(bool)<br>    name                      = string<br>    queue_all_runs            = optional(bool)<br>    remote_state_consumer_ids = optional(list(string))<br>    terraform_version         = optional(string)<br>    trigger_prefixes          = optional(list(string))<br>    working_directory         = optional(string)<br>    vcs_repo                  = optional(string)<br>  }))</pre> | <pre>{<br>  "default": {<br>    "agent_pool": "",<br>    "auto_apply": false,<br>    "description": "",<br>    "execution_mode": "remote",<br>    "global_remote_state": false,<br>    "name": "",<br>    "queue_all_runs": false,<br>    "remote_state_consumer_ids": [],<br>    "terraform_version": "1.0.0",<br>    "trigger_prefixes": [],<br>    "vcs_repo": "",<br>    "working_directory": ""<br>  }<br>}</pre> | no |
+| <a name="input_trigger_prefixes"></a> [trigger\_prefixes](#input\_trigger\_prefixes) | List of repository-root-relative paths which describe all locations to be tracked for changes. | `list(string)` | `[]` | no |
+| <a name="input_vcs_repo"></a> [vcs\_repo](#input\_vcs\_repo) | A reference to your VCS repository in the format <organization>/<repository> where <organization> and <repository> refer to the organization and repository in your VCS provider. | `string` | `""` | no |
+| <a name="input_working_directory"></a> [working\_directory](#input\_working\_directory) | A relative path that Terraform will execute within. Defaults to the root of your repository. | `string` | `""` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_tfe_workspace_id"></a> [tfe\_workspace\_id](#output\_tfe\_workspace\_id) | n/a |
-| <a name="output_tfe_workspace_name"></a> [tfe\_workspace\_name](#output\_tfe\_workspace\_name) | n/a |
+| <a name="output_workspace"></a> [workspace](#output\_workspace) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

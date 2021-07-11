@@ -56,9 +56,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_tfc_agent_pool"></a> [tfc\_agent\_pool](#module\_tfc\_agent\_pool) | terraform-cisco-modules/tfe//modules/tfc_agent_pools | n/a |
-| <a name="module_tfc_variables_global"></a> [tfc\_variables\_global](#module\_tfc\_variables\_global) | terraform-cisco-modules/tfe//modules/tfc_variables | n/a |
-| <a name="module_tfc_workspaces"></a> [tfc\_workspaces](#module\_tfc\_workspaces) | terraform-cisco-modules/tfe//modules/tfc_workspaces | n/a |
+| <a name="module_tfc_agent_pool"></a> [tfc\_agent\_pool](#module\_tfc\_agent\_pool) | terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool | n/a |
+| <a name="module_tfc_variables_global"></a> [tfc\_variables\_global](#module\_tfc\_variables\_global) | terraform-cisco-modules/modules/tfe//modules/tfc_variables | n/a |
+| <a name="module_tfc_workspaces"></a> [tfc\_workspaces](#module\_tfc\_workspaces) | terraform-cisco-modules/modules/tfe//modules/tfc_workspaces | n/a |
 
 ## Resources
 
