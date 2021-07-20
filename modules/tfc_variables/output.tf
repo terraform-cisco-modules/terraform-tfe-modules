@@ -1,3 +1,3 @@
-output "tfe_variable_id" {
-  value = tfe_variable.variable.*.id
+output "id" {
+  value = { for v in sort(keys(tfe_variable.variable)) : v => tfe_variable.variable[v].id }
 }
