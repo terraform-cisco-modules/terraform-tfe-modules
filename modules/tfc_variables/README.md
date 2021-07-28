@@ -39,12 +39,12 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_category"></a> [category](#input\_category) | Whether this is a Terraform or environment variable. | `string` | n/a | yes |
-| <a name="input_variable_list"></a> [variable\_list](#input\_variable\_list) | Variable List (containing category, description, key, sensitive, value, workspace\_id). | `list(map(string))` | n/a | yes |
+| <a name="input_variable_list"></a> [variable\_list](#input\_variable\_list) | Variable List (containing category, description, key, sensitive, value, workspace\_id). | <pre>map(object(<br>    {<br>      description = optional(string)<br>      hcl         = optional(bool)<br>      key         = string<br>      sensitive   = optional(bool)<br>      value       = string<br>    }<br>  ))</pre> | <pre>{<br>  "default": {<br>    "description": "",<br>    "hcl": false,<br>    "key": "REQUIRED",<br>    "sensitive": false,<br>    "value": "REQUIRED"<br>  }<br>}</pre> | no |
 | <a name="input_workspace_id"></a> [workspace\_id](#input\_workspace\_id) | Terraform Workspace to assign the variables. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_tfe_variable_id"></a> [tfe\_variable\_id](#output\_tfe\_variable\_id) | n/a |
+| <a name="output_id"></a> [id](#output\_id) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
