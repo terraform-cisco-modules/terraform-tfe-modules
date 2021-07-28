@@ -19,6 +19,6 @@ resource "tfe_workspace" "workspace" {
     branch             = var.vcs_repo != "" ? var.branch : ""
     identifier         = var.vcs_repo
     ingress_submodules = var.vcs_repo != "" ? var.ingress_submodules : ""
-    oauth_token_id     = var.vcs_repo != "" ? var.tfc_oath_token : ""
+    oauth_token_id     = var.vcs_repo != "" ? var.tfc_oauth_token : ""
   }
 }

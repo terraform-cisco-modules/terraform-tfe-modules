@@ -2,7 +2,7 @@ terraform {
   experiments = [module_variable_optional_attrs]
 }
 
-variable "tfc_oath_token" {
+variable "tfc_oauth_token" {
   description = "Terraform Cloud OAuth Token for VCS_Repo Integration."
   type        = string
   sensitive   = true

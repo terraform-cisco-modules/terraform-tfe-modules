@@ -14,6 +14,6 @@ resource "tfe_workspace" "workspace" {
   working_directory         = each.value["working_directory"]
   vcs_repo {
     identifier     = each.value["vcs_repo"]
-    oauth_token_id = var.tfc_oath_token
+    oauth_token_id = var.tfc_oauth_token
   }
 }
