@@ -14,21 +14,6 @@ variable "tfc_org_name" {
 }
 
 variable "workspace_list" {
-  description = "Workspaces (containing agent_pool, description, exec_mode, name, vcs_repo, working_dir)."
-  type = map(object({
-    auto_apply                = optional(bool)
-    agent_pool                = optional(string)
-    description               = optional(string)
-    execution_mode            = optional(string)
-    global_remote_state       = optional(bool)
-    name                      = string
-    queue_all_runs            = optional(bool)
-    remote_state_consumer_ids = optional(list(string))
-    terraform_version         = optional(string)
-    trigger_prefixes          = optional(list(string))
-    working_directory         = optional(string)
-    vcs_repo                  = optional(string)
-  }))
   default = {
     default = {
       auto_apply                = false
@@ -45,6 +30,21 @@ variable "workspace_list" {
       vcs_repo                  = ""
     }
   }
+  description = "Workspaces (containing agent_pool, description, exec_mode, name, vcs_repo, working_dir)."
+  type = map(object({
+    auto_apply                = optional(bool)
+    agent_pool                = optional(string)
+    description               = optional(string)
+    execution_mode            = optional(string)
+    global_remote_state       = optional(bool)
+    name                      = string
+    queue_all_runs            = optional(bool)
+    remote_state_consumer_ids = optional(list(string))
+    terraform_version         = optional(string)
+    trigger_prefixes          = optional(list(string))
+    working_directory         = optional(string)
+    vcs_repo                  = optional(string)
+  }))
 }
 
 locals {
