@@ -53,6 +53,7 @@ variable "ingress_submodules" {
 }
 
 variable "name" {
+  default     = "default"
   description = "Name for the workspace."
   type        = string
 }
@@ -81,19 +82,32 @@ variable "ssh_key_id" {
   type        = string
 }
 
+variable "structured_run_output_enabled" {
+  default     = true
+  description = "Whether this workspace should show output from Terraform runs using the enhanced UI when available. Defaults to true. Setting this to false ensures that all runs in this workspace will display their output as text logs."
+  type        = bool
+}
+
+variable "tag_names" {
+  default     = []
+  description = "A list of tag names for this workspace. Note that tags must only contain letters, numbers or colons."
+  type        = list(string)
+}
+
 variable "terraform_version" {
-  default     = "1.0.0"
+  default     = "1.1.8"
   description = "The version of Terraform to use for this workspace. Defaults to the latest available version."
   type        = string
 }
 
 variable "tfc_oauth_token" {
+  default     = ""
   description = "Terraform Cloud OAuth Token for VCS_Repo Integration."
   type        = string
   sensitive   = true
 }
 
-variable "tfc_org_name" {
+variable "tfc_organization" {
   description = "Terraform Cloud Organization Name."
   type        = string
 }
