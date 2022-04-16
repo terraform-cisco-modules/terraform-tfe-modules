@@ -114,10 +114,10 @@ locals {
       terraform_version             = v.terraform_version != null ? v.terraform_version : "1.1.8"
       trigger_prefixes              = v.trigger_prefixes != null ? v.trigger_prefixes : []
       working_directory             = v.working_directory != null ? v.working_directory : ""
-      vcs_repo                      = v.vcs_repo != null && length(v.vcs_repo) > 0 ? [
-        for key, value in v.vcs_repo: {
-          branch = value.branch != null ? value.branch : ""
-          identifier = value.identifier != null ? value.identifier : ""
+      vcs_repo = v.vcs_repo != null && length(v.vcs_repo) > 0 ? [
+        for key, value in v.vcs_repo : {
+          branch             = value.branch != null ? value.branch : ""
+          identifier         = value.identifier != null ? value.identifier : ""
           ingress_submodules = value.ingress_submodules != null ? value.ingress_submodules : false
         }
       ] : []

@@ -4,9 +4,10 @@
 #__________________________________________________________
 
 module "tfc_agent_pool" {
-  source       = "terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool"
-  agent_pool   = var.agent_pool
-  tfc_org_name = var.tfc_org_name
+  version          = "1.0.2"
+  source           = "terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool"
+  agent_pool       = var.agent_pool
+  tfc_organization = var.tfc_organization
 }
 
 
@@ -16,12 +17,13 @@ module "tfc_agent_pool" {
 #__________________________________________________________
 
 module "tfc_workspaces" {
-  source = "terraform-cisco-modules/modules/tfe//modules/tfc_workspaces"
+  version = "1.0.2"
+  source  = "terraform-cisco-modules/modules/tfe//modules/tfc_workspaces"
   depends_on = [
     module.tfc_agent_pool
   ]
-  tfc_oath_token = var.tfc_oath_token
-  tfc_org_name   = var.tfc_organization
+  tfc_oath_token   = var.tfc_oath_token
+  tfc_organization = var.tfc_organization
   workspace_list = {
     "global_vars" = {
       auto_apply          = true
@@ -78,7 +80,8 @@ module "tfc_workspaces" {
 #__________________________________________________________
 
 module "tfc_variables_global" {
-  source = "terraform-cisco-modules/modules/tfe//modules/tfc_variables"
+  version = "1.0.2"
+  source  = "terraform-cisco-modules/modules/tfe//modules/tfc_variables"
   depends_on = [
     module.tfc_workspaces
   ]

@@ -9,7 +9,7 @@ variable "terraform_cloud_token" {
   type        = string
 }
 
-variable "tfc_org_name" {
+variable "tfc_organization" {
   description = "Terraform Cloud Organization Name"
   type        = string
 }

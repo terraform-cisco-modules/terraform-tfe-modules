@@ -13,7 +13,7 @@ output "tfc_agent_pool" {
 # Terraform Cloud Workspaces Module Outputs
 #__________________________________________________________
 
-output "tfc_workspaces" {
+output "tfc_workspace_ids" {
   description = "Terraform Cloud Workspace ID(s)."
   value       = module.tfc_workspaces
 }

@@ -46,7 +46,7 @@ Lastly, the example is consuming the tfc_variables.  The example includes the va
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | >=0.25.3 |
+| <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | 0.30.2 |
 
 ## Providers
 
@@ -56,9 +56,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_tfc_agent_pool"></a> [tfc\_agent\_pool](#module\_tfc\_agent\_pool) | terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool | n/a |
-| <a name="module_tfc_variables_global"></a> [tfc\_variables\_global](#module\_tfc\_variables\_global) | terraform-cisco-modules/modules/tfe//modules/tfc_variables | n/a |
-| <a name="module_tfc_workspaces"></a> [tfc\_workspaces](#module\_tfc\_workspaces) | terraform-cisco-modules/modules/tfe//modules/tfc_workspaces | n/a |
+| <a name="module_tfc_agent_pool"></a> [tfc\_agent\_pool](#module\_tfc\_agent\_pool) | terraform-cisco-modules/modules/tfe//modules/tfc_agent_pool | 1.0.2 |
+| <a name="module_tfc_variables_global"></a> [tfc\_variables\_global](#module\_tfc\_variables\_global) | terraform-cisco-modules/modules/tfe//modules/tfc_variables | 1.0.2 |
+| <a name="module_tfc_workspaces"></a> [tfc\_workspaces](#module\_tfc\_workspaces) | terraform-cisco-modules/modules/tfe//modules/tfc_workspaces | 1.0.2 |
 
 ## Resources
 
@@ -84,7 +84,7 @@ No resources.
 | <a name="input_terraform_cloud_token"></a> [terraform\_cloud\_token](#input\_terraform\_cloud\_token) | Token to Authenticate to the Terraform Cloud | `string` | n/a | yes |
 | <a name="input_terraform_version"></a> [terraform\_version](#input\_terraform\_version) | Terraform Target Version. | `string` | `"1.0.0"` | no |
 | <a name="input_tfc_oath_token"></a> [tfc\_oath\_token](#input\_tfc\_oath\_token) | Terraform Cloud OAuth Token for VCS\_Repo Integration | `string` | n/a | yes |
-| <a name="input_tfc_org_name"></a> [tfc\_org\_name](#input\_tfc\_org\_name) | Terraform Cloud Organization Name | `string` | n/a | yes |
+| <a name="input_tfc_organization"></a> [tfc\_organization](#input\_tfc\_organization) | Terraform Cloud Organization Name | `string` | n/a | yes |
 | <a name="input_timezone"></a> [timezone](#input\_timezone) | Timezone for Kubernetes Sysconfig Policy. | `string` | `"America/New_York"` | no |
 | <a name="input_vcs_repo"></a> [vcs\_repo](#input\_vcs\_repo) | Version Control System Repository. | `string` | n/a | yes |
 | <a name="input_vsphere_target"></a> [vsphere\_target](#input\_vsphere\_target) | vSphere Server registered as a Target in Intersight.  The default, 210, only works if this is for the DevNet Sandbox. | `string` | `"210"` | no |
@@ -94,5 +94,5 @@ No resources.
 | Name | Description |
 |------|-------------|
 | <a name="output_tfc_agent_pool"></a> [tfc\_agent\_pool](#output\_tfc\_agent\_pool) | n/a |
-| <a name="output_tfc_workspaces"></a> [tfc\_workspaces](#output\_tfc\_workspaces) | Terraform Cloud Workspace ID(s). |
+| <a name="output_tfc_workspace_ids"></a> [tfc\_workspace\_ids](#output\_tfc\_workspace\_ids) | Terraform Cloud Workspace ID(s). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
