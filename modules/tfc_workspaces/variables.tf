@@ -1,6 +1,4 @@
-terraform {
-  experiments = [module_variable_optional_attrs]
-}
+
 
 variable "oauth_token_id" {
   default     = ""
